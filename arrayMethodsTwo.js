@@ -6,16 +6,19 @@ let numbers = [40, 68, 14, 90, 49];
 ////////// PROBLEM 1 //////////
 
 /* 
-    Use forEach method to loop though all the elements in the 'numbers' array above, and divide each element (number) by 2. Print the result in console.
+    Use forEach method to loop though all the elements in the 'numbers' array above, and divide each element 
+    (number) by 2. Print the result in console.
 */
 
 // CODE HERE
 
+numbers.forEach((element) => console.log(element / 2))
 
 ////////// PROBLEM 2 //////////
 
 /* 
-    Use a built-in Javascript method that will loop through the 'numbers' array above, divide each number by 2, and then return a NEW ARRAY.
+    Use a built-in Javascript method that will loop through the 'numbers' array above, divide each number 
+    by 2, and then return a NEW ARRAY.
 
     HINT: .forEach() vs .map() ---- which one does return a new array?
 
@@ -24,6 +27,8 @@ let numbers = [40, 68, 14, 90, 49];
 
 // CODE HERE
 
+let p2 = numbers.map(num => num / 2)
+console.log(p2)
 
 ////////// PROBLEM 3 //////////
 
@@ -44,13 +49,16 @@ let cities = [
 // ***** Do not edit the code above *****
 
 /* 
-    Use the filter method on 'cities' array to return a new array of city/cities that end(s) with letter "i."
+    Use the filter method on 'cities' array to return a new array of city/cities that end(s) with 
+    letter "i."
 
     Make sure you save the code in a variable. Then, console.log the variable to see the new array.
 */
 
 // CODE HERE
 
+let p3 = cities.filter(element => element.endsWith("i"))
+console.log(p3)
 
 ////////// PROBLEM 4 //////////
 
@@ -80,14 +88,29 @@ let fruits = [
 // ***** Do not edit the code above *****
 
 /* 
-    Using forEach method, identify each element of the 'fruits' array above if it's an apple or orange by its color. If the color is red, print "The fruit with index [THE ELEMENT'S INDEX] is an apple." If the color is orange, print "The fruit with index [THE ELEMENT INDEX] is an orange." If the color is not red or apple, print "The fruit with index [THE ELEMENT'S INDEX] is neither apple or orange."
+    Using forEach method, identify each element of the 'fruits' array above if it's an apple or orange by 
+    its color. If the color is red, print "The fruit with index [THE ELEMENT'S INDEX] is an apple." If the 
+    color is orange, print "The fruit with index [THE ELEMENT INDEX] is an orange." If the color is not red or
+     apple, print "The fruit with index [THE ELEMENT'S INDEX] is neither apple or orange."
 
-    Note: do a google search on how to find an element's index of an array in Javascript. There is a built-in Javascript method that would help you find an index of an element in an array.
+    Note: do a google search on how to find an element's index of an array in Javascript. There is a 
+    built-in Javascript method that would help you find an index of an element in an array.
 */
 
 // CODE HERE
 
+fruits.forEach((elem, index) => {
+      if (elem.color === `red`){
+         console.log( `the fruit with index ${index} is and apple`)
+   } 
+      else if (elem.color === `orange`){
+          console.log(`The fruit with index ${index} is an orange.`)
+   }
+      else {
+          console.log(`The fruit with index ${index} is neither apple or orange.`)
+  }
 
+})
 
 /* 
     Run the code in node to see the result. Then, copy and paste the result below.
@@ -99,6 +122,10 @@ let fruits = [
     The fruit with index 3 is an apple  
 */
 
+// The fruit with index 0 is neither apple or orange.
+// The fruit with index 1 is an orange.
+// The fruit with index 2 is neither apple or orange.
+// the fruit with index 3 is and apple
 // COPY AND PASTE THE RESULT FROM YOUR CONSOLE (NODE CONSOLE IS YOUR TERMINAL) HERE (AS A MULTI LINES COMMENT)
 
 
@@ -146,6 +173,9 @@ let foods = [
 
 // CODE HERE
 
+let p5 = foods.filter(element => element.tags.includes(`rice`)).reduce((acc, curr) => acc + curr.price, 0)
+
+console.log(p5)
 
 // THE TOTAL
 
